@@ -1,0 +1,87 @@
+<nav role="toolbar" data-toggle="buttons" *ngIf="!search" class="navbar sticky-top btn-toolbar btn-group-toggle">
+  <button class="btn btn-outline-brown search-tg" (click)="search=true; setTitle('Todos os Móveis')">
+    Busca por nome <i-search></i-search>
+  </button>
+  <label class="btn btn-outline-brown active" (click)="setTitle('Todos os Móveis')">
+    <input type="radio" checked>Todos
+  </label>
+  <label class="btn btn-outline-brown" (click)="setTitle('Mesas')">
+    <input type="radio">Mesas
+  </label>
+  <label class="btn btn-outline-brown" (click)="setTitle('Cadeiras')">
+    <input type="radio">Cadeiras
+  </label>
+  <label class="btn btn-outline-brown" (click)="setTitle('Portas')">
+    <input type="radio">Portas
+  </label>
+  <label class="btn btn-outline-brown" (click)="setTitle('Janelas')">
+    <input type="radio">Janelas
+  </label>
+  <label class="btn btn-outline-brown" (click)="setTitle('Prateleiras')">
+    <input type="radio">Prateleiras
+  </label>
+  <label class="btn btn-outline-brown" (click)="setTitle('Gamelas')">
+    <input type="radio">Gamelas
+  </label>
+</nav>
+<nav role="toolbar" class="navbar sticky-top btn-toolbar" *ngIf="search">
+  <div class="form-inline mx-auto input-group">
+    <div class="input-group-prepend">
+      <button class="btn btn-outline-brown" (click)="search=false; setTitle('Todos os Móveis')">
+        <i-x></i-x>
+        <span *ngIf="innerWidth > 470">Limpar filtro</span>
+      </button>
+    </div>
+    <input class="form-control ml-2" [(ngModel)]="query" placeholder="Pesquisar produtos..." aria-label="Search" 
+    (keyup.enter)="searchName()">
+    <div class="input-group-append">
+      <button class="btn btn-outline-brown" (click)="searchName()"><i-search></i-search></button>
+    </div>
+  </div>
+</nav>
+<main class="page service-page">
+  <section class="clean-block clean-services">
+      <div class="container">
+          <div class="block-heading">
+              <h2 class="text-info">{{title}}</h2>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-4" *ngFor="let product of filteredProducts">
+              <div class="card clean-card">
+                <img class="card-img-top w-100 d-block" src="{{product.img[0]}}" routerLink="/produtos/{{product._id}}">
+                <div class="card-body">
+                  <h4 class="card-title" routerLink="/produtos/{{product._id}}">{{product.titulo}}</h4>
+                  <p class="card-text" routerLink="/produtos/{{product._id}}">{{product.descricao}}</p>
+                </div>
+                <div>
+                  <a role="button" target="_blank" rel="noopener noreferrer" 
+                  href="https://wa.me/555136584137?text=Olá, estou interessado(a) no produto: oarmazemdorustico.com/produtos/{{product._id}}" 
+                  class="btn btn-outline-success btn-sm mb-4">
+                    <img src="/assets/img/wpp.png" class="wpp">
+                    Pedir no WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4" *ngIf="products === undefined">
+              <div class="card clean-card">
+                <img class="card-img-top w-100 d-block" src="/assets/img/loader.gif">
+                <div class="card-body">
+                  <h4 class="card-title">Aguarde</h4>
+                  <p class="card-text">Carregando produtos...</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4" *ngIf="filteredProducts.length === 0">
+              <div class="card clean-card">
+                <img class="card-img-top w-100 d-block confused m-auto pt-2" src="/assets/img/confused.png">
+                <div class="card-body">
+                  <h4 class="card-title">Nada Encontrado</h4>
+                  <p class="card-text">Não encontramos produtos com o filtro escolhido...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </section>
+</main>

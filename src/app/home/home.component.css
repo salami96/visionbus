@@ -1,0 +1,8 @@
+@media (max-width: 767px){
+    .map {
+        margin-top: 10% !important;
+    }
+}
+.produtos {
+    height: 350px;
+}

@@ -1,0 +1,29 @@
+.brown {
+    background-color: var(--main-color) !important;
+}
+
+.active {
+    background-color: var(--acc-color) !important;
+}
+.logo img {
+    max-height: 50px;
+}
+@media (max-width: 576px){
+    .logo img {
+        max-width: 200px;
+    }
+}
+@media (max-width: 767px){
+    .nav-item {
+        min-width: 50%;
+        width: 200px;
+    }
+}
+.nav-item {
+    margin: 0 5px 3px 5px;
+    align-self: center;
+    padding-right: 0 !important;
+}
+.feather {
+    line-height: 0 !important;
+}

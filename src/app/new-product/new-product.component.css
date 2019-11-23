@@ -1,0 +1,37 @@
+form {
+    border-color: var(--main-color) !important;
+}
+.input-img{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90% !important;
+}
+mat-form-field {
+    width: 100%;
+}
+.i-image {
+    padding-bottom: 5px;
+}
+mat-form-field label {
+    padding-top: 0px;
+}
+.active {
+    color: white !important;
+    background-color: var(--main-color) !important;
+}
+.btn-toolbar {
+    justify-content: center;
+}
+.btn-toolbar label {
+    margin: 0 2px 2px 2px;
+}
+.loading {
+    margin-top: 15px;
+    width: 100%;
+    max-width: 700px;
+    height: 20px;
+}
+.mat-form-field-wrapper {
+    padding: 0 !important;
+}

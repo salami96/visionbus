@@ -1,0 +1,42 @@
+.card {
+    transition: .2s ease-in-out;
+}
+.card:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05)
+}
+.active {
+    color: white !important;
+    background-color: var(--acc-color) !important;
+}
+.btn-toolbar {
+    justify-content: center;
+}
+.btn-toolbar label {
+    margin: 0 2px 1px 2px;
+}
+.search-tg {
+    margin: 0 2px 1px 2px;
+}
+.wpp{
+    height: 1.5rem;
+}
+.navbar {
+    width: 100%;
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.navbar input {
+    border: 1px solid var(--main-color);
+}
+.block-heading {
+    padding: 5px;
+    margin: 5px;
+}
+.confused {
+    width: 50% !important;
+    height: 50% !important;
+}

@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --main-color: #592E0B;
+    --acc-color: #3F2212;
+}
+h2.text-info, .text-brown {
+    color: var(--main-color) !important;
+}
+.btn-brown {
+    background-color: var(--main-color) !important;
+    border-color: white !important;
+    color: white !important;
+}
+.btn-brown:hover {
+    background-color: var(--acc-color) !important;
+}
+.btn-outline-brown {
+    background-color: white !important;
+    border-color: var(--main-color) !important;
+    color: var(--main-color) !important;
+}
+.btn-outline-brown:hover {
+    background-color: var(--main-color) !important;
+    color: white !important;
+    border-color: white;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

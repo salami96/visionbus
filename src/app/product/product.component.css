@@ -1,0 +1,11 @@
+.wpp{
+    height: 2.5rem;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon, .carousel-indicators li {
+    background-color: #000 ;
+}
+.product {
+    max-width: 700px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}

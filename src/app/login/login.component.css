@@ -1,0 +1,16 @@
+form {
+    border-color: var(--main-color) !important;
+}
+.alert {
+    margin-top: 10px;
+}
+.invalid {
+    border-color: #dc3545;
+}
+.loading {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 700px;
+    height: 20px;
+}

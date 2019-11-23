@@ -1,0 +1,40 @@
+<header>
+  <nav class="navbar navbar-dark navbar-expand-md bg-black brown clean-navbar">
+    <div class="container">
+      <a class="navbar-brand logo btn" routerLink="/">
+        <img src="assets/img/logo.png">
+      </a>
+      <button data-toggle="collapse" class="navbar-toggler btn-sm btn btn-brown" data-target="#navcol-1">
+        <span class="sr-only">Toggle navigation</span><i-menu></i-menu>
+      </button>
+      <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item">
+            <a role="button" class="nav-link btn-sm btn btn-brown" 
+            routerLinkActive="active" routerLink="/produtos">
+              Produtos
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="uService.user !== null">
+            <a role="button" class="nav-link btn-sm btn btn-brown" 
+            routerLinkActive="active" routerLink="/novo/produto">
+              Novo Produto
+            </a>
+          </li>
+          <li class="nav-item">
+            <a role="button" class="nav-link btn-sm btn btn-brown" 
+            routerLinkActive="active" routerLink="/entrar">
+            <div *ngIf="uService.user === null">
+              <i-user></i-user>
+            </div>
+            <div *ngIf="uService.user !== null">
+              Sair
+            </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+

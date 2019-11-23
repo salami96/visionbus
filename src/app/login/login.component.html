@@ -1,0 +1,41 @@
+<main class="page login-page">
+    <section class="clean-block clean-form dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">Entrar</h2>
+            </div>
+            <form *ngIf="nome === null">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="inputEmail" name="inputEmail" [(ngModel)]="inputEmail" [class.invalid]="erroEmail"
+                    class="form-control invalid" placeholder="email@domain.com" required autofocus>
+                    <div class="alert alert-danger" role="alert" [hidden]="!erroEmail">
+                        Informe corretamente o campo de email!
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="inputPassword" [(ngModel)]="inputSenha" name="inputSenha" [class.invalid]="erroSenha"
+                    class="form-control" placeholder="*******">
+                    <div class="alert alert-danger" role="alert" [hidden]="!erroSenha">
+                        Informe corretamente o campo de senha!
+                    </div>
+                    <div class="alert alert-danger" role="alert" [hidden]="!erroLogin">
+                        Email ou senha incorretos!
+                    </div>
+                </div>
+                <iframe [hidden]="!loading" class="loading" src="https://mdbootstrap.com/api/snippets/embed/1298583/fullscreen" frameborder="0"></iframe>
+                <button class="btn btn-outline-brown btn-block" (click)="logar()" [disabled]="loading">
+                    <i-user></i-user>
+                    Acessar
+                </button>
+            </form>
+            <form *ngIf="nome !== null">
+                <h2 class="text-info">Você já está conectado!</h2>
+                <button class="btn btn-outline-brown btn-block" (click)="deslogar()">
+                    <i-user-x></i-user-x>
+                    Deseja desconectar?</button>
+            </form>
+        </div>
+    </section>
+</main>
